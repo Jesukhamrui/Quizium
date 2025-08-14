@@ -192,13 +192,11 @@ const QuizApp = () => {
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
         * {
           font-family: 'Poppins', sans-serif;
         }
-        
         @keyframes pulse {
           0%, 100% {
             opacity: 0.75;
@@ -207,25 +205,20 @@ const QuizApp = () => {
             opacity: 1;
           }
         }
-        
         .animate-pulse {
           animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
-        
         ::-webkit-scrollbar {
           width: 8px;
         }
-        
         ::-webkit-scrollbar-track {
           background: #374151;
           border-radius: 4px;
         }
-        
         ::-webkit-scrollbar-thumb {
           background: #4ecdc4;
           border-radius: 4px;
         }
-        
         ::-webkit-scrollbar-thumb:hover {
           background: #45b7b8;
         }
