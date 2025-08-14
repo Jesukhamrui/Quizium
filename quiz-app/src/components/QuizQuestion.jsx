@@ -2,106 +2,108 @@ import React, { useState, useRef } from 'react';
 
 const questionBanks = {
   'Web Development': [
-    { question: "What does HTML stand for?", options: ["HyperText Markup Language", "HyperText Machine Language", "Hyper Transfer Markup Language", "HighText Markup Language"], correctAnswer: "HyperText Markup Language" },
-    { question: "What does CSS stand for?", options: ["Cascading Style Sheets", "Creative Style Sheets", "Computer Style Sheets", "Colorful Style Sheets"], correctAnswer: "Cascading Style Sheets" },
-    { question: "Which language is primarily used for web development?", options: ["JavaScript", "C#", "Python", "Java"], correctAnswer: "JavaScript" },
-    { question: "What does the 'box-sizing' property do in CSS?", options: ["Sets the width of the box", "Defines how padding and border are included in the element's total width", "Changes the background color of the box", "Sets the background of the box"], correctAnswer: "Defines how padding and border are included in the element's total width" },
-    { question: "What is the default value of the 'position' property in CSS?", options: ["absolute", "relative", "fixed", "static"], correctAnswer: "static" },
-    { question: "What does JavaScript 'JSON' stand for?", options: ["JavaScript Object Notation", "JavaScript Online Notation", "JavaScript Object Node", "JavaScript Object Number"], correctAnswer: "JavaScript Object Notation" },
-    { question: "Which HTML tag is used for a line break?", options: ["<br>", "<line>", "<hr>", "<break>"], correctAnswer: "<br>" },
-    { question: "Which function is used to parse a JSON string into a JavaScript object?", options: ["JSON.stringify()", "JSON.parse()", "JSON.decode()", "JSON.toObject()"], correctAnswer: "JSON.parse()" },
-    { question: "What does 'DOM' stand for in JavaScript?", options: ["Document Object Model", "Data Object Model", "Document Online Management", "Data Organization Method"], correctAnswer: "Document Object Model" },
-    { question: "Which HTML tag is used to define a hyperlink?", options: ["<link>", "<a>", "<url>", "<href>"], correctAnswer: "<a>" },
-    { question: "What is the purpose of a CSS 'media query'?", options: ["To change the page content", "To detect device screen size and apply styles accordingly", "To optimize images", "To load external scripts"], correctAnswer: "To detect device screen size and apply styles accordingly" },
-    { question: "Which HTML element is used to embed JavaScript?", options: ["<script>", "<js>", "<javascript>", "<style>"], correctAnswer: "<script>" },
-    { question: "What is the purpose of the 'let' keyword in JavaScript?", options: ["To declare a variable with block scope", "To declare a global variable", "To define a function", "To create an object"], correctAnswer: "To declare a variable with block scope" },
-    { question: "What is the purpose of the 'fetch' API in JavaScript?", options: ["To make HTTP requests", "To create animations", "To manipulate the DOM", "To store data locally"], correctAnswer: "To make HTTP requests" },
-    { question: "What is the purpose of the 'localStorage' object in JavaScript?", options: ["To store data locally in the browser", "To make HTTP requests", "To create animations", "To manipulate the DOM"], correctAnswer: "To store data locally in the browser" }
+    // ...existing questions...
   ],
   'Programming Languages': [
-    { question: "Which programming language is known as the mother of all languages?", options: ["C", "Java", "Assembly", "Fortran"], correctAnswer: "C" },
-    { question: "What is the full form of PHP?", options: ["Personal Hypertext Processor", "Private Home Page", "Hypertext Preprocessor", "Preprocessor Hypertext Page"], correctAnswer: "Hypertext Preprocessor" },
-    { question: "Which programming language is commonly used for iOS app development?", options: ["Swift", "Java", "Python", "Ruby"], correctAnswer: "Swift" },
-    { question: "What is the correct syntax for declaring a C++ variable?", options: ["variable type variable_name;", "type variable_name;", "var variable_name;", "variable_name: type;"], correctAnswer: "type variable_name;" },
-    { question: "Which of the following is a correct way to define a pointer in C++?", options: ["int* ptr;", "int ptr;", "ptr int*;", "pointer int;"], correctAnswer: "int* ptr;" },
-    { question: "What is the function used to find the size of a variable in C++?", options: ["sizeof()", "length()", "size()", "getSize()"], correctAnswer: "sizeof()" },
-    { question: "What does 'cin' do in C++?", options: ["It outputs data to the console", "It reads input from the console", "It clears the screen", "It creates a new variable"], correctAnswer: "It reads input from the console" },
-    { question: "Which of the following is a C++ access modifier?", options: ["private", "public", "protected", "All of the above"], correctAnswer: "All of the above" },
-    { question: "What does the 'new' keyword do in C++?", options: ["Allocates memory dynamically", "Deallocates memory dynamically", "Creates a new variable", "Increments the value of a variable"], correctAnswer: "Allocates memory dynamically" },
-    { question: "Which of these operators is used for memory deallocation in C++?", options: ["free()", "delete", "remove()", "dealloc()"], correctAnswer: "delete" },
-    { question: "What is the return type of the 'main' function in C++?", options: ["void", "int", "char", "None of the above"], correctAnswer: "int" },
-    { question: "What is the purpose of the 'continue' statement in C++?", options: ["To skip the current iteration of a loop", "To stop the execution of a loop", "To exit from a function", "To exit the program"], correctAnswer: "To skip the current iteration of a loop" },
-    { question: "Which of the following is used for function overloading in C++?", options: ["Same function name with different arguments", "Same function name with different return type", "Different function names", "None of the above"], correctAnswer: "Same function name with different arguments" },
-    { question: "Which of the following C++ data types is used to store a single character?", options: ["char", "string", "int", "double"], correctAnswer: "char" },
-    { question: "What is the scope of a local variable in C++?", options: ["It is limited to the function where it is declared", "It is accessible throughout the entire program", "It is accessible within the entire class", "It is global"], correctAnswer: "It is limited to the function where it is declared" }
+    // ...existing questions...
   ],
   'Data Structures': [
-    { question: "What is the primary characteristic of an array?", options: ["It has a fixed size", "It can store different data types", "It is dynamic", "It cannot store elements in sequence"], correctAnswer: "It has a fixed size" },
-    { question: "Which data structure uses 'Last In First Out' (LIFO) principle?", options: ["Queue", "Stack", "Array", "Linked List"], correctAnswer: "Stack" },
-    { question: "Which data structure uses 'First In First Out' (FIFO) principle?", options: ["Stack", "Queue", "Array", "Linked List"], correctAnswer: "Queue" },
-    { question: "What is the time complexity of accessing an element in an array?", options: ["O(n)", "O(log n)", "O(1)", "O(n^2)"], correctAnswer: "O(1)" },
-    { question: "What is a balanced binary tree?", options: ["A tree where the left and right subtrees of every node differ in height by no more than one", "A tree with no child nodes", "A tree where every node has two child nodes", "A tree where the elements are arranged in order"], correctAnswer: "A tree where the left and right subtrees of every node differ in height by no more than one" },
-    { question: "What is a hash table used for?", options: ["Sorting data", "Storing key-value pairs", "Storing sorted data", "Graph traversal"], correctAnswer: "Storing key-value pairs" },
-    { question: "Which of the following is the worst-case time complexity of QuickSort?", options: ["O(n log n)", "O(log n)", "O(n^2)", "O(n)"], correctAnswer: "O(n^2)" },
-    { question: "What is the time complexity of accessing an element in a linked list?", options: ["O(n)", "O(1)", "O(log n)", "O(n^2)"], correctAnswer: "O(n)" },
-    { question: "Which data structure is used to implement a breadth-first search?", options: ["Queue", "Stack", "Binary Search Tree", "Hash Table"], correctAnswer: "Queue" },
-    { question: "Which data structure is used to implement depth-first search?", options: ["Queue", "Stack", "Binary Search Tree", "Heap"], correctAnswer: "Stack" },
-    { question: "What is a circular linked list?", options: ["A linked list where the last node points to the first node", "A linked list where nodes are connected in a circle", "A doubly linked list with no end", "A linked list that stores elements in a circular order"], correctAnswer: "A linked list where the last node points to the first node" },
-    { question: "What is the time complexity of deleting an element from the front of a queue?", options: ["O(1)", "O(n)", "O(log n)", "O(n^2)"], correctAnswer: "O(1)" },
-    { question: "In a binary search tree, what is the left child of a node?", options: ["It has a value greater than the parent node", "It has a value smaller than the parent node", "It is always a leaf node", "It has the same value as the parent node"], correctAnswer: "It has a value smaller than the parent node" },
-    { question: "What is the time complexity of finding an element in a hash table?", options: ["O(n)", "O(log n)", "O(1)", "O(n^2)"], correctAnswer: "O(1)" },
-    { question: "What is the space complexity of a linked list?", options: ["O(1)", "O(n)", "O(log n)", "O(n^2)"], correctAnswer: "O(n)" }
+    // ...existing questions...
   ],
   'Operating Systems': [
-    { question: "What is the primary function of an operating system?", options: ["Manage hardware resources", "Run applications", "Provide a graphical interface", "Ensure security of data"], correctAnswer: "Manage hardware resources" },
-    { question: "What is a process in an operating system?", options: ["A program that is executing", "A set of related files", "A storage unit", "A type of network connection"], correctAnswer: "A program that is executing" },
-    { question: "Which of the following is NOT a part of the operating system?", options: ["Kernel", "Shell", "Compiler", "File system"], correctAnswer: "Compiler" },
-    { question: "What is the role of the kernel in an operating system?", options: ["Manage system resources", "Provide network access", "Run user applications", "Provide a user interface"], correctAnswer: "Manage system resources" },
-    { question: "Which of the following is used for process synchronization?", options: ["Semaphore", "Queue", "Array", "Linked List"], correctAnswer: "Semaphore" },
-    { question: "What is a deadlock?", options: ["A state where two or more processes are blocked and cannot proceed", "A process waiting indefinitely for resources", "A condition where resources are allocated incorrectly", "A state where memory is fragmented"], correctAnswer: "A state where two or more processes are blocked and cannot proceed" },
-    { question: "Which memory management technique allows non-contiguous allocation of memory?", options: ["Paging", "Segmentation", "Fragmentation", "Stack allocation"], correctAnswer: "Paging" },
-    { question: "What is virtual memory?", options: ["Memory used by the operating system", "Memory that is not physically available but simulated by the OS", "Memory used by applications only", "A type of external memory"], correctAnswer: "Memory that is not physically available but simulated by the OS" },
-    { question: "Which type of scheduling algorithm assigns priority to processes?", options: ["Priority Scheduling", "Round Robin", "First Come First Serve", "Shortest Job First"], correctAnswer: "Priority Scheduling" },
-    { question: "What is the purpose of the file system in an OS?", options: ["To manage processes", "To manage memory", "To store and organize files", "To ensure security of data"], correctAnswer: "To store and organize files" },
-    { question: "Which of the following is a type of file system?", options: ["NTFS", "FAT32", "ext4", "All of the above"], correctAnswer: "All of the above" },
-    { question: "What is a 'context switch' in an operating system?", options: ["Switching between multiple threads", "Switching between different operating systems", "Saving and loading the state of processes", "Switching from user mode to kernel mode"], correctAnswer: "Saving and loading the state of processes" },
-    { question: "What is the main advantage of multi-threading?", options: ["Improves CPU utilization by using multiple threads in a process", "Increases the size of the memory", "Reduces the total number of processes", "None of the above"], correctAnswer: "Improves CPU utilization by using multiple threads in a process" },
-    { question: "What is a page fault?", options: ["When a process tries to access a page that is not in memory", "When the operating system encounters an error", "When a process uses up all of its allocated memory", "When memory is fragmented"], correctAnswer: "When a process tries to access a page that is not in memory" },
-    { question: "Which of the following is a method for process synchronization?", options: ["Semaphore", "Mutex", "Monitor", "All of the above"], correctAnswer: "All of the above" }
+    // ...existing questions...
   ],
   'Computer Networks': [
-    { question: "What is the primary function of the OSI model?", options: ["To describe network protocols", "To define the physical network components", "To set standards for network communication", "All of the above"], correctAnswer: "All of the above" },
-    { question: "Which layer of the OSI model is responsible for routing?", options: ["Network layer", "Transport layer", "Application layer", "Data link layer"], correctAnswer: "Network layer" },
-    { question: "Which protocol is used to assign IP addresses to devices on a network?", options: ["HTTP", "FTP", "DHCP", "SMTP"], correctAnswer: "DHCP" },
-    { question: "What does TCP stand for?", options: ["Transmission Control Protocol", "Transfer Control Protocol", "Transport Control Protocol", "None of the above"], correctAnswer: "Transmission Control Protocol" },
-    { question: "Which protocol is used for secure communication over a network?", options: ["HTTPS", "HTTP", "FTP", "SMTP"], correctAnswer: "HTTPS" },
-    { question: "Which of the following is a type of network topology?", options: ["Star", "Bus", "Ring", "All of the above"], correctAnswer: "All of the above" },
-    { question: "What is the maximum length of an Ethernet frame?", options: ["1500 bytes", "2048 bytes", "1024 bytes", "4096 bytes"], correctAnswer: "1500 bytes" },
-    { question: "Which of the following is a connectionless protocol?", options: ["UDP", "TCP", "FTP", "HTTP"], correctAnswer: "UDP" },
-    { question: "Which device is used to connect multiple networks?", options: ["Hub", "Switch", "Router", "Bridge"], correctAnswer: "Router" },
-    { question: "What is the main function of DNS?", options: ["To route packets", "To translate domain names into IP addresses", "To encrypt data", "To filter network traffic"], correctAnswer: "To translate domain names into IP addresses" },
-    { question: "Which of these is a secure communication protocol?", options: ["FTP", "HTTP", "HTTPS", "Telnet"], correctAnswer: "HTTPS" },
-    { question: "What does IP stand for in networking?", options: ["Internet Protocol", "Internal Protocol", "Interface Protocol", "Information Protocol"], correctAnswer: "Internet Protocol" },
-    { question: "Which port is commonly used for HTTP traffic?", options: ["21", "25", "80", "443"], correctAnswer: "80" },
-    { question: "What is the purpose of a subnet mask?", options: ["To hide network addresses", "To identify network and host portions of an IP address", "To encrypt network traffic", "To route packets"], correctAnswer: "To identify network and host portions of an IP address" },
-    { question: "Which of the following is a private IP address range?", options: ["192.168.x.x", "172.16.x.x", "10.x.x.x", "All of the above"], correctAnswer: "All of the above" }
+    // ...existing questions...
   ],
   'Algorithms': [
-    { question: "What is the time complexity of binary search in a sorted array?", options: ["O(n)", "O(log n)", "O(n^2)", "O(1)"], correctAnswer: "O(log n)" },
-    { question: "Which algorithm is used for sorting an array in the least amount of time on average?", options: ["Quick Sort", "Merge Sort", "Bubble Sort", "Selection Sort"], correctAnswer: "Quick Sort" },
-    { question: "What is the best case time complexity of merge sort?", options: ["O(n)", "O(n log n)", "O(log n)", "O(n^2)"], correctAnswer: "O(n log n)" },
-    { question: "What does the term 'NP-complete' refer to?", options: ["A class of problems that are both NP and NP-hard", "A problem that is solvable in polynomial time", "A problem that has no solution", "A problem that is solvable in exponential time"], correctAnswer: "A class of problems that are both NP and NP-hard" },
-    { question: "What is the time complexity of the Dijkstra algorithm for finding the shortest path?", options: ["O(n log n)", "O(n^2)", "O(n^3)", "O(log n)"], correctAnswer: "O(n^2)" },
-    { question: "Which algorithm is used for finding the minimum spanning tree of a graph?", options: ["Dijkstra's Algorithm", "Prim's Algorithm", "Floyd-Warshall", "Bellman-Ford"], correctAnswer: "Prim's Algorithm" },
-    { question: "What is the time complexity of the brute force approach for the traveling salesman problem?", options: ["O(n^2)", "O(n!)", "O(n log n)", "O(n^3)"], correctAnswer: "O(n!)" },
-    { question: "Which of the following is NOT a divide-and-conquer algorithm?", options: ["Quick Sort", "Merge Sort", "Insertion Sort", "Binary Search"], correctAnswer: "Insertion Sort" },
-    { question: "What does 'Big O' notation represent?", options: ["Time complexity", "Space complexity", "Worst-case scenario", "All of the above"], correctAnswer: "All of the above" },
-    { question: "What is the time complexity of the bubble sort algorithm?", options: ["O(n)", "O(n log n)", "O(n^2)", "O(log n)"], correctAnswer: "O(n^2)" },
-    { question: "Which sorting algorithm has the best average-case time complexity?", options: ["Bubble Sort", "Selection Sort", "Merge Sort", "Insertion Sort"], correctAnswer: "Merge Sort" },
-    { question: "What is the space complexity of merge sort?", options: ["O(1)", "O(log n)", "O(n)", "O(n^2)"], correctAnswer: "O(n)" },
-    { question: "Which algorithm is used for topological sorting?", options: ["DFS", "BFS", "Dijkstra", "Prim's"], correctAnswer: "DFS" },
-    { question: "What is the time complexity of heap sort?", options: ["O(n)", "O(n log n)", "O(n^2)", "O(log n)"], correctAnswer: "O(n log n)" },
-    { question: "Which data structure is optimal for implementing Dijkstra's algorithm?", options: ["Queue", "Stack", "Priority Queue", "Hash Table"], correctAnswer: "Priority Queue" }
+    // ...existing questions...
+  ],
+
+  
+  'Computer Architecture': [
+    { question: "What is the basic unit of a computer's CPU?", options: ["Register", "Cache", "ALU", "RAM"], correctAnswer: "ALU" },
+    { question: "Which memory is directly accessible by the CPU?", options: ["RAM", "ROM", "Cache", "Hard Disk"], correctAnswer: "Cache" },
+    { question: "What does 'RISC' stand for?", options: ["Reduced Instruction Set Computer", "Random Integrated System Chip", "Rapid Instruction Set Computer", "Reliable Integrated System Chip"], correctAnswer: "Reduced Instruction Set Computer" },
+    { question: "Which component performs arithmetic and logic operations?", options: ["ALU", "CU", "RAM", "ROM"], correctAnswer: "ALU" },
+    { question: "What is the function of the control unit?", options: ["Directs operations of the processor", "Stores data", "Performs calculations", "Manages input/output"], correctAnswer: "Directs operations of the processor" },
+    { question: "Which bus connects CPU to memory?", options: ["Data bus", "Address bus", "Control bus", "All of the above"], correctAnswer: "All of the above" },
+    { question: "What is pipelining in CPU architecture?", options: ["Executing multiple instructions simultaneously", "Storing data in cache", "Increasing clock speed", "Connecting multiple CPUs"], correctAnswer: "Executing multiple instructions simultaneously" },
+    { question: "Which type of memory is non-volatile?", options: ["ROM", "RAM", "Cache", "Register"], correctAnswer: "ROM" },
+    { question: "What is the purpose of a register?", options: ["Temporary data storage in CPU", "Permanent data storage", "External storage", "Network communication"], correctAnswer: "Temporary data storage in CPU" },
+    { question: "Which architecture uses fewer instructions?", options: ["RISC", "CISC", "MISC", "SISC"], correctAnswer: "RISC" }
+  ],
+  'Databases': [
+    { question: "What is a database?", options: ["A collection of organized data", "A programming language", "A hardware device", "An operating system"], correctAnswer: "A collection of organized data" },
+    { question: "Which language is used to manage databases?", options: ["SQL", "HTML", "CSS", "Python"], correctAnswer: "SQL" },
+    { question: "What is a table in a database?", options: ["A collection of rows and columns", "A single value", "A function", "A query"], correctAnswer: "A collection of rows and columns" },
+    { question: "What is a primary key?", options: ["A unique identifier for a record", "A duplicate value", "A foreign key", "A column with NULL values"], correctAnswer: "A unique identifier for a record" },
+    { question: "Which database model organizes data in tables?", options: ["Relational", "Hierarchical", "Network", "Object-oriented"], correctAnswer: "Relational" },
+    { question: "What is normalization?", options: ["Organizing data to reduce redundancy", "Increasing redundancy", "Creating indexes", "Backing up data"], correctAnswer: "Organizing data to reduce redundancy" },
+    { question: "Which command is used to retrieve data?", options: ["SELECT", "INSERT", "UPDATE", "DELETE"], correctAnswer: "SELECT" },
+    { question: "What is a foreign key?", options: ["A key that links two tables", "A key that is always unique", "A key that is never NULL", "A key used for indexing"], correctAnswer: "A key that links two tables" },
+    { question: "Which of the following is a NoSQL database?", options: ["MongoDB", "MySQL", "Oracle", "PostgreSQL"], correctAnswer: "MongoDB" },
+    { question: "Which SQL clause is used to filter results?", options: ["WHERE", "ORDER BY", "GROUP BY", "HAVING"], correctAnswer: "WHERE" }
+  ],
+  'Artificial Intelligence': [
+    { question: "What is Artificial Intelligence?", options: ["Simulation of human intelligence by machines", "A programming language", "A type of hardware", "A database system"], correctAnswer: "Simulation of human intelligence by machines" },
+    { question: "Which of the following is a branch of AI?", options: ["Machine Learning", "Web Development", "Database Management", "Networking"], correctAnswer: "Machine Learning" },
+    { question: "What is the Turing Test used for?", options: ["Testing machine intelligence", "Testing software speed", "Testing database performance", "Testing network security"], correctAnswer: "Testing machine intelligence" },
+    { question: "Which language is popular for AI programming?", options: ["Python", "HTML", "CSS", "PHP"], correctAnswer: "Python" },
+    { question: "What is an expert system?", options: ["A computer system that emulates decision-making of a human expert", "A database system", "A web server", "A network protocol"], correctAnswer: "A computer system that emulates decision-making of a human expert" },
+    { question: "What is natural language processing?", options: ["Interaction between computers and human language", "Image processing", "Database management", "Network communication"], correctAnswer: "Interaction between computers and human language" },
+    { question: "Which of the following is a type of AI?", options: ["Weak AI", "Strong AI", "Both", "None"], correctAnswer: "Both" },
+    { question: "What is a neural network?", options: ["A computing system inspired by the human brain", "A network protocol", "A database model", "A web framework"], correctAnswer: "A computing system inspired by the human brain" },
+    { question: "Which AI technique is used for learning from data?", options: ["Machine Learning", "Database Management", "Web Development", "Networking"], correctAnswer: "Machine Learning" },
+    { question: "What is the goal of AI?", options: ["To create intelligent machines", "To build websites", "To manage databases", "To secure networks"], correctAnswer: "To create intelligent machines" }
+  ],
+  'Cybersecurity': [
+    { question: "What is cybersecurity?", options: ["Protection of computer systems from theft or damage", "Building websites", "Programming languages", "Database management"], correctAnswer: "Protection of computer systems from theft or damage" },
+    { question: "What is a firewall?", options: ["A network security device", "A programming language", "A database", "A web server"], correctAnswer: "A network security device" },
+    { question: "What does 'phishing' mean?", options: ["Fraudulent attempt to obtain sensitive information", "Building websites", "Programming", "Database management"], correctAnswer: "Fraudulent attempt to obtain sensitive information" },
+    { question: "What is malware?", options: ["Malicious software", "A programming language", "A database", "A web server"], correctAnswer: "Malicious software" },
+    { question: "What is encryption?", options: ["Converting data into a secure format", "Building websites", "Programming", "Database management"], correctAnswer: "Converting data into a secure format" },
+    { question: "What is a VPN?", options: ["Virtual Private Network", "Very Powerful Network", "Virtual Public Network", "Verified Private Network"], correctAnswer: "Virtual Private Network" },
+    { question: "What is two-factor authentication?", options: ["Using two methods to verify identity", "Using two passwords", "Using two databases", "Using two servers"], correctAnswer: "Using two methods to verify identity" },
+    { question: "What is a DDoS attack?", options: ["Distributed Denial of Service", "Database Denial of Service", "Domain Denial of Service", "Data Denial of Service"], correctAnswer: "Distributed Denial of Service" },
+    { question: "What is the purpose of antivirus software?", options: ["Detect and remove malware", "Build websites", "Manage databases", "Program computers"], correctAnswer: "Detect and remove malware" },
+    { question: "What is social engineering?", options: ["Manipulating people to gain confidential information", "Building websites", "Programming", "Database management"], correctAnswer: "Manipulating people to gain confidential information" }
+  ],
+  'Cloud Computing': [
+    { question: "What is cloud computing?", options: ["Delivery of computing services over the internet", "Building websites", "Programming languages", "Database management"], correctAnswer: "Delivery of computing services over the internet" },
+    { question: "Which of the following is a cloud service model?", options: ["IaaS", "PaaS", "SaaS", "All of the above"], correctAnswer: "All of the above" },
+    { question: "What does SaaS stand for?", options: ["Software as a Service", "System as a Service", "Storage as a Service", "Security as a Service"], correctAnswer: "Software as a Service" },
+    { question: "Which company provides AWS?", options: ["Amazon", "Google", "Microsoft", "IBM"], correctAnswer: "Amazon" },
+    { question: "What is virtualization?", options: ["Creating virtual versions of resources", "Building websites", "Programming", "Database management"], correctAnswer: "Creating virtual versions of resources" },
+    { question: "What is a public cloud?", options: ["Cloud services offered over the public internet", "Private cloud", "Hybrid cloud", "Community cloud"], correctAnswer: "Cloud services offered over the public internet" },
+    { question: "What is the main benefit of cloud computing?", options: ["Scalability", "Building websites", "Programming", "Database management"], correctAnswer: "Scalability" },
+    { question: "What is a private cloud?", options: ["Cloud infrastructure operated solely for one organization", "Public cloud", "Hybrid cloud", "Community cloud"], correctAnswer: "Cloud infrastructure operated solely for one organization" },
+    { question: "What is multi-tenancy in cloud computing?", options: ["Multiple users sharing the same resources", "Single user access", "Multiple databases", "Multiple servers"], correctAnswer: "Multiple users sharing the same resources" },
+    { question: "Which of the following is NOT a cloud provider?", options: ["AWS", "Azure", "Google Cloud", "Oracle Database"], correctAnswer: "Oracle Database" }
+  ],
+  'Software Engineering': [
+    { question: "What is software engineering?", options: ["Application of engineering to software development", "Building websites", "Programming languages", "Database management"], correctAnswer: "Application of engineering to software development" },
+    { question: "Which model is known as the classic life cycle model?", options: ["Waterfall", "Agile", "Spiral", "V-Model"], correctAnswer: "Waterfall" },
+    { question: "What is the first phase of SDLC?", options: ["Requirement analysis", "Design", "Implementation", "Testing"], correctAnswer: "Requirement analysis" },
+    { question: "What does UML stand for?", options: ["Unified Modeling Language", "Universal Modeling Language", "Unified Markup Language", "Universal Markup Language"], correctAnswer: "Unified Modeling Language" },
+    { question: "What is agile methodology?", options: ["Iterative and incremental development", "Linear development", "Waterfall model", "Spiral model"], correctAnswer: "Iterative and incremental development" },
+    { question: "What is version control?", options: ["Managing changes to source code", "Building websites", "Programming", "Database management"], correctAnswer: "Managing changes to source code" },
+    { question: "Which tool is commonly used for version control?", options: ["Git", "Python", "HTML", "CSS"], correctAnswer: "Git" },
+    { question: "What is refactoring?", options: ["Improving code without changing its functionality", "Building websites", "Programming", "Database management"], correctAnswer: "Improving code without changing its functionality" },
+    { question: "What is a software requirement?", options: ["A condition that must be met by software", "A programming language", "A database", "A web server"], correctAnswer: "A condition that must be met by software" },
+    { question: "What is software testing?", options: ["Process of evaluating software for errors", "Building websites", "Programming", "Database management"], correctAnswer: "Process of evaluating software for errors" }
+  ],
+  'Machine Learning': [
+    { question: "What is machine learning?", options: ["A field of AI that enables computers to learn from data", "Building websites", "Programming languages", "Database management"], correctAnswer: "A field of AI that enables computers to learn from data" },
+    { question: "Which of the following is a type of machine learning?", options: ["Supervised", "Unsupervised", "Reinforcement", "All of the above"], correctAnswer: "All of the above" },
+    { question: "What is a dataset?", options: ["A collection of data", "A programming language", "A database", "A web server"], correctAnswer: "A collection of data" },
+    { question: "What is a feature in machine learning?", options: ["An individual measurable property of data", "A programming language", "A database", "A web server"], correctAnswer: "An individual measurable property of data" },
+    { question: "What is overfitting?", options: ["Model fits training data too well and fails to generalize", "Model fits data poorly", "Model is too simple", "Model is too complex"], correctAnswer: "Model fits training data too well and fails to generalize" },
+    { question: "Which algorithm is used for classification?", options: ["Decision Tree", "Linear Regression", "K-Means", "Apriori"], correctAnswer: "Decision Tree" },
+    { question: "What is regression in machine learning?", options: ["Predicting continuous values", "Predicting categories", "Clustering data", "Reducing data"], correctAnswer: "Predicting continuous values" },
+    { question: "What is a neural network?", options: ["A computing system inspired by the human brain", "A network protocol", "A database model", "A web framework"], correctAnswer: "A computing system inspired by the human brain" },
+    { question: "What is the purpose of training data?", options: ["To teach the model patterns", "To test the model", "To validate the model", "To deploy the model"], correctAnswer: "To teach the model patterns" },
+    { question: "What is a confusion matrix?", options: ["A table used to evaluate classification models", "A database table", "A web page", "A network diagram"], correctAnswer: "A table used to evaluate classification models" }
   ]
 };
 questionBanks['DBMS'] = [

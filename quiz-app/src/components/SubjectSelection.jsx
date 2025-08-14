@@ -7,13 +7,20 @@ const SubjectSelection = ({ selectSubject }) => {
     'Data Structures',
     'Operating Systems',
     'Computer Networks',
-    'Algorithms'
+    'Algorithms',
+    'Computer Architecture',
+    'Databases',
+    'Artificial Intelligence',
+    'Cybersecurity',
+    'Cloud Computing',
+    'Software Engineering',
+    'Machine Learning'
   ];
 
   return (
     <div className="text-center">
       <h2 className="text-3xl font-bold mb-4 text-white">Choose Your Subject</h2>
-      <p className="text-gray-300 mb-8">Select a computer science topic to test your knowledge</p>
+      <p className="text-gray-300 mb-8">Select a  topic to test your knowledge</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {subjects.map((subject) => (
           <button
