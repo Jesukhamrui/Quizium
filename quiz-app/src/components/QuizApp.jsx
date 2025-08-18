@@ -128,7 +128,6 @@ const QuizApp = () => {
     setQuestions([]);
     setCurrentQuestionIndex(0);
     setScore(0);
-    setPlayerName('');
     setUserAnswers([]);
   };
 
