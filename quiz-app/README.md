@@ -1,12 +1,80 @@
-# React + Vite
+# Quizium
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern quiz application built with React and Vite. Supports multiple subjects, randomized questions, scoring, grading, and certificate generation.
 
-Currently, two official plugins are available:
+## Features
+- Subject selection
+- Randomized questions per quiz
+- Score calculation and grading
+- Certificate generation and download
+- Responsive, modern UI with Tailwind CSS
+- Modular code structure for easy maintenance
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## File Structure
 
-## Expanding the ESLint configuration
+```
+quiz-app/
+├── public/
+│   ├── index.html
+│   └── vite.svg
+├── src/
+│   ├── App.jsx
+│   ├── App.css
+│   ├── main.jsx
+│   ├── index.js
+│   ├── index.css
+│   ├── assets/
+│   │   └── react.svg
+│   ├── components/
+│   │   ├── Certificate.jsx
+│   │   ├── QuizApp.jsx
+│   │   ├── QuizQuestion.jsx
+│   │   ├── ResultScreen.jsx
+│   │   ├── StartScreen.jsx
+│   │   ├── SubjectSelection.jsx
+│   ├── data/
+│   │   └── questions.js
+│   ├── styles/
+│   │   ├── index.css
+│   │   └── QuizApp.css
+│   ├── utils/
+│   │   ├── certificateGenerator.js
+│   │   └── quizHelpers.js
+├── package.json
+├── README.md
+├── vite.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── eslint.config.js
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## How to Run
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Customization
+- Add or edit quiz questions in `src/data/questions.js`
+- Update styles in `src/styles/` or use Tailwind classes
+- Extend functionality by adding new components in `src/components/`
+
+## Technologies Used
+- React
+- Vite
+- Tailwind CSS
+- ESLint
+
+## Credits
+- [Vite](https://vitejs.dev/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+---
+Feel free to modify and expand this app for your own quiz needs!
