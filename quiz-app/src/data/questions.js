@@ -1,4 +1,11 @@
 export const questionBanks = {
+  'Operating Systems': [
+    { question: "What is the main function of an operating system?", options: ["Manage hardware resources", "Run applications", "Provide a user interface", "All of the above"], correctAnswer: "All of the above" },
+    { question: "Which of the following is a type of operating system?", options: ["Batch", "Time-sharing", "Distributed", "All of the above"], correctAnswer: "All of the above" },
+    { question: "What does CPU stand for?", options: ["Central Processing Unit", "Central Programming Unit", "Computer Personal Unit", "Centralized Processing Unit"], correctAnswer: "Central Processing Unit" },
+    { question: "Which component is responsible for memory management?", options: ["CPU", "RAM", "Motherboard", "Operating System"], correctAnswer: "Operating System" },
+    
+  ],
   'Web Development': [
     { question: "What does HTML stand for?", options: ["Hyper Text Markup Language", "High Text Markup Language", "Hyper Tabular Markup Language", "None of these"], correctAnswer: "Hyper Text Markup Language" },
     { question: "Which HTML element is used to define the title of a document?", options: ["<title>", "<head>", "<meta>", "<link>"], correctAnswer: "<title>" },
@@ -190,5 +197,19 @@ export const questionBanks = {
     { question: "Which exception is thrown when dividing by zero?", options: ["ArithmeticException", "NullPointerException", "IOException", "ClassNotFoundException"], correctAnswer: "ArithmeticException" },
     { question: "Which method is used to compare strings?", options: ["equals()", "compare()", "==", "compareTo()"], correctAnswer: "equals()" },
     { question: "Which keyword is used for interface implementation?", options: ["implements", "extends", "interface", "inherit"], correctAnswer: "implements" }
+  ],
+  'Programming Languages': [
+    { question: "Which language is known as the backbone of web development?", options: ["JavaScript", "Python", "C++", "Java"], correctAnswer: "JavaScript" },
+    { question: "Which language is primarily used for Android app development?", options: ["Java", "Swift", "Kotlin", "C#"], correctAnswer: "Kotlin" },
+    { question: "Which language is famous for its simplicity and readability?", options: ["Python", "C", "Assembly", "Java"], correctAnswer: "Python" },
+    { question: "Which language uses indentation to define code blocks?", options: ["Python", "JavaScript", "C++", "PHP"], correctAnswer: "Python" },
+    { question: "Which language is used for iOS app development?", options: ["Swift", "Java", "C#", "Ruby"], correctAnswer: "Swift" }
+  ],
+  'Computer Networks': [
+    { question: "What does LAN stand for?", options: ["Local Area Network", "Large Area Network", "Long Area Network", "Low Area Network"], correctAnswer: "Local Area Network" },
+    { question: "Which device forwards data packets between computer networks?", options: ["Router", "Switch", "Hub", "Modem"], correctAnswer: "Router" },
+    { question: "What protocol is used for secure web browsing?", options: ["HTTPS", "FTP", "SMTP", "HTTP"], correctAnswer: "HTTPS" },
+    { question: "Which layer of the OSI model is responsible for routing?", options: ["Network", "Transport", "Data Link", "Physical"], correctAnswer: "Network" },
+    { question: "What does IP stand for?", options: ["Internet Protocol", "Internal Process", "Input Port", "Integrated Platform"], correctAnswer: "Internet Protocol" }
   ]
 };
