@@ -66,7 +66,7 @@ const Certificate = ({ score, questions, playerName, selectedSubject, downloadCe
               <div className="mt-4 flex justify-center space-x-8">
                 <div className="text-center">
                   <div className="h-px bg-gray-400 w-24 mx-auto mb-1"></div>
-                  <p className="text-xs text-gray-400">Computer Science Quiz</p>
+                  <p className="text-xs text-gray-400">Quizium Quiz</p>
                 </div>
                 <div className="text-center">
                   <div className="h-px bg-gray-400 w-24 mx-auto mb-1"></div>
