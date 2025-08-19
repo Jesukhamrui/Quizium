@@ -3,7 +3,7 @@ import React from 'react';
 const StartScreen = ({ playerName, setPlayerName, startQuiz }) => {
   return (
     <div className="text-center">
-      <h2 className="text-3xl font-bold mb-8 text-white">🎓  Quiz Challenge</h2>
+      <h2 className="text-3xl font-bold mb-8 text-white">🎓Quizium  Quiz Challenge</h2>
       <p className="text-lg text-gray-300 mb-8">Test your knowledge across various subjects!</p>
       <div className="space-y-6">
         <input
